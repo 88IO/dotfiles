@@ -14,6 +14,3 @@
     path = shell
     url = https://github.com/88IO/shell.git
     ignore = all
-	path = conky
-	url = https://github.com/88IO/conky
-    ignore = all
