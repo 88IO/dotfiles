@@ -24,6 +24,5 @@ do
 done
 
 ln -snfv ${DOT_DIR}/nvim ${HOME}/.config/nvim
-ln -snfv ${DOT_DIR}/conky ${HOME}/.conky
 
 echo "linked dotfiles completely"

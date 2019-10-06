@@ -14,7 +14,6 @@
     path = shell
     url = https://github.com/88IO/shell.git
     ignore = all
-[submodule "conky"]
 	path = conky
 	url = https://github.com/88IO/conky
     ignore = all
