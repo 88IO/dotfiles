@@ -10,6 +10,3 @@
     path = tmux
     url = https://github.com/88IO/tmux.git
     ignore = all
-    path = shell
-    url = https://github.com/88IO/shell.git
-    ignore = all
