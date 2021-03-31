@@ -10,7 +10,7 @@ echo "Enter DOT_DIR"
 
 cd ${DOT_DIR}
 
-for d in vim tmux shell
+for d in vim tmux
 do
     cd ${d}
     for f in .??*
