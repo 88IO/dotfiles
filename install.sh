@@ -10,17 +10,14 @@ echo "Enter DOT_DIR"
 
 cd ${DOT_DIR}
 
-for d in vim tmux
+for f in ??*
 do
-    cd ${d}
-    for f in .??*
-    do
-        [ "$f" = ".git" ] && continue
-        [ "$f" = ".gitignore" ] && continue
+    [ "$f" = "README.md" ] && continue
+    [ "$f" = "install.sh" ] && continue
 
-        ln -snfv ${DOT_DIR}/${d}/${f} ${HOME}/${f}
-    done
-    cd ${DOT_DIR}
+    [ "$f" = "nvim" ] && continue
+
+    ln -snfv ${DOT_DIR}/${f} ${HOME}/.${f}
 done
 
 ln -snfv ${DOT_DIR}/nvim ${HOME}/.config/nvim
