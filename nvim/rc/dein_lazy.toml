@@ -1,0 +1,56 @@
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['denite.nvim']
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html', 'javascriptreact', 'typescriptreact']
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'sjl/gundo.vim'
+on_cmd = ['GundoToggle']
+
+#Python
+[[plugins]]
+repo = 'jmcantrell/vim-virtualenv'
+on_ft = ['python', 'python3', 'djangohmtl']
+
+[[plugins]]
+repo = 'tell-k/vim-autopep8'
+on_ft = ['python', 'python3', 'djangohtml']
+hook_source = '''
+    function! Preserve(command)
+        let search = @/
+        let cursor_position = getpos('.')
+        normal! H
+        let window_position = getpos('.')
+        call setpos('.', cursor_position)
+        execute a:command
+        let @/ = search
+        call setpos('.', window_position)
+        normal! zt
+        call setpos('.', cursor_position)
+    endfunction
+
+    function! Autopep8()
+        call Preserve(':silent %!autopep8 -a -')
+    endfunction
+
+    nnoremap <S-f> :call Autopep8()<CR>
+'''
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = ["plantuml", "markdown"]
+
+[[plugins]]
+repo = 'iamcco/markdown-preview.nvim'
+on_ft = ['markdown', 'plantuml', 'dot']
+build = 'sh -c "cd app && yarn install"'
+hook_source = '''
+    let g:mkdp_filetypes = ['markdown', 'plantuml', 'dot']
+'''
