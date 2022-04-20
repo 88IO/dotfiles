@@ -156,9 +156,9 @@ export LESS=-r
 
 ## Plugins section: Enable fish style features
 # Use syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys to history substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -186,14 +186,14 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
 #		#BASE16_SHELL="/usr/share/zsh/scripts/base16-shell/base16-$theme.$shade.sh"
 #		#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 #		# Use autosuggestion
-#		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#		source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #		ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 #  		ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 #     ;;
   *)
         RPS1='$(git_prompt_string)'
 		# Use autosuggestion
-		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+		source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 		ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
   		ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
     ;;
@@ -250,13 +250,6 @@ function texlivebuild {
     done
 }
 
-function brightness {
-    if [ $# -eq 1 ] && [ $((`echo "0 < $1" | bc` + `echo "$1 <= 1" | bc`)) -eq 2 ]; then
-        echo Brightness: $1
-        xrandr --output HDMI-0 --brightness $1
-    fi
-}
-
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
@@ -283,11 +276,6 @@ fshow() {
                 {}
 FZF-EOF"
 }
-
-for d in `ls $HOME/works/`
-do
-    alias ${d/works/cd}="cdls $HOME/works/$d"
-done
 
 alias ls="ls --color"
 alias cd="cdls"

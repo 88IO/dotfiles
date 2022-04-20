@@ -9,17 +9,23 @@
 
 ### Required Plugins
 
+create zsh plugins directory
+
+```
+mkdir ~/.zsh/plugins -p
+```
+
 - zsh-autosuggestions
 ```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting /usr/share/zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
 ```
 - zsh-history-substring-search
 ```
-git clone https://github.com/zsh-users/zsh-history-substring-search /usr/share/zsh/plugins/zsh-history-substring-search
+git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/plugins/zsh-history-substring-search
 ```
 - zsh-syntax-highlighting
 ```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting /usr/share/zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/plugins/zsh-syntax-highlighting
 ```
 
 ## NeoVim
